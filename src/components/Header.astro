@@ -1,0 +1,56 @@
+---
+const links = [
+  { href: '#about', label: 'אודות' },
+  { href: '#services', label: 'שירותים' },
+  { href: '#expertise', label: 'תחומי מומחיות' },
+  { href: '#contact', label: 'יצירת קשר' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <a href="#top" class="flex items-center gap-3">
+      <img src="/favicon.svg" alt="" class="h-9 w-9" />
+      <span class="text-lg font-bold text-white">
+        AppliTech <span class="hidden font-normal text-gray-400 sm:inline">- פתרונות תוכנה ו-AI</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="ניווט ראשי">
+      {links.map((l) => (
+        <a href={l.href} class="text-sm font-medium text-gray-300 transition hover:text-white">{l.label}</a>
+      ))}
+    </nav>
+
+    <button
+      id="menu-btn"
+      class="rounded-lg p-2 text-gray-300 hover:bg-white/10 md:hidden"
+      aria-label="תפריט"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden border-t border-white/10 bg-ink px-5 py-3 md:hidden" aria-label="ניווט נייד">
+    {links.map((l) => (
+      <a href={l.href} class="block py-2 text-gray-300 hover:text-white">{l.label}</a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    const toggle = (open: boolean) => {
+      menu.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    btn.addEventListener('click', () => toggle(menu.classList.contains('hidden')));
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => toggle(false)));
+  }
+</script>

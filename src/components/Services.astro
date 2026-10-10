@@ -1,0 +1,54 @@
+---
+const services = [
+  {
+    title: 'פיתוח מערכות מקצה לקצה',
+    sub: 'End-to-End Development',
+    text: 'בניית מערכות מורכבות מאפס, עם התאמה אישית מלאה לתהליכים ולצרכים של העסק.',
+    icon: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
+  },
+  {
+    title: 'יצירת סוכני AI',
+    sub: 'AI Agents Development',
+    text: 'פיתוח ושילוב של סוכנים חכמים לאוטומציה ולייעול תהליכים עסקיים.',
+    icon: 'M12 2a2 2 0 012 2v1h3a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h3V4a2 2 0 012-2zM9 12h.01M15 12h.01M9 16h6',
+  },
+  {
+    title: 'אימון מודלי AI',
+    sub: 'AI Model Training',
+    text: 'אימון וכוונון (Fine-tuning) של מודלים מתקדמים לצרכים עסקיים ייחודיים.',
+    icon: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
+  },
+  {
+    title: 'ארכיטקטורת תוכנה ופיתוח Custom',
+    sub: 'Software Architecture',
+    text: 'ארכיטקטורה אמינה, ניתנת להרחבה ומאובטחת שמלווה אתכם כשהעסק גדל.',
+    icon: 'M12 2l9 5v10l-9 5-9-5V7l9-5zM12 12l9-5M12 12v10M12 12L3 7',
+  },
+];
+---
+
+<section id="services" class="py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold text-white sm:text-4xl">שירותים ותחומי מומחיות</h2>
+      <p id="expertise" class="mt-4 text-gray-400">
+        מכלי AI ועד תשתיות תוכנה שלמות - פתרון אחד, אחריות אחת.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map((s) => (
+        <article class="group rounded-2xl border border-white/10 bg-ink-soft p-6 transition hover:-translate-y-1 hover:border-brand-400/50">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d={s.icon} />
+            </svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">{s.title}</h3>
+          <p class="mt-1 text-xs tracking-wide text-brand-400" dir="ltr">{s.sub}</p>
+          <p class="mt-3 text-sm leading-relaxed text-gray-400">{s.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

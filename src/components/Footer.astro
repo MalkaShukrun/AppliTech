@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/10 bg-ink-soft py-12">
+  <div class="mx-auto grid max-w-6xl gap-8 px-5 sm:grid-cols-3">
+    <div>
+      <p class="text-lg font-bold text-white">AppliTech</p>
+      <p class="mt-2 text-sm text-gray-400">פתרונות תוכנה ו-AI מותאמים אישית.</p>
+    </div>
+    <nav aria-label="ניווט תחתון">
+      <p class="font-bold text-white">ניווט</p>
+      <ul class="mt-2 space-y-1 text-sm text-gray-400">
+        <li><a class="hover:text-white" href="#about">אודות</a></li>
+        <li><a class="hover:text-white" href="#services">שירותים</a></li>
+        <li><a class="hover:text-white" href="#expertise">תחומי מומחיות</a></li>
+        <li><a class="hover:text-white" href="#contact">יצירת קשר</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="font-bold text-white">צרו קשר</p>
+      <p class="mt-2 text-sm text-gray-400">
+        דרך <a class="text-brand-400 hover:underline" href="#contact">טופס יצירת הקשר</a> באתר
+      </p>
+    </div>
+  </div>
+  <p class="mt-10 text-center text-xs text-gray-500">© {year} AppliTech. כל הזכויות שמורות.</p>
+</footer>
